@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'splashscreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SplashScreen(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,15 +33,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:
-       Text("Home"),
+      body: Text("Home"),
     );
   }
 }
