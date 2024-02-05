@@ -20,18 +20,18 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 3000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MyApp()));
+        context, MaterialPageRoute(builder: (context) => Login()));
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 11, 216, 103),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Center(
           child: Container(
               height: MediaQuery.of(context).size.height / 3,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/download.jpeg"),
+                  image: AssetImage("assets/images/templogo.jpeg"),
                 ),
               ))),
     );
