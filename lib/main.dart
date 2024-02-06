@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(4)),
                     ),
-                    color: Color.fromARGB(255, 102, 3, 3)),
+                    color: Color.fromARGB(246, 170, 11, 11)),
                 child: _isLoading
                     ? const Center(
                         child: CircularProgressIndicator(
@@ -96,6 +96,7 @@ class _LoginState extends State<Login> {
                       )
                     : const Text(
                         "Login",
+                        style: TextStyle(color: Colors.white),
                       ),
               ),
             ),
@@ -118,7 +119,7 @@ class _LoginState extends State<Login> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: const Text(
-                      "Sign Up",
+                      "Sign In",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
