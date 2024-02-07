@@ -15,7 +15,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            size: 20,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: Placeholder(),
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromARGB(

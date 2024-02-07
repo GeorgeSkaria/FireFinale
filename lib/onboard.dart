@@ -132,7 +132,10 @@ class _OnboardState extends State<Onboard> {
                         MaterialPageRoute(builder: (context) => MyApp()),
                       );
                     },
-                    child: Text("     Proceed    "),
+                    child: Text(
+                      "     Proceed    ",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   SizedBox(
                     height: 20,

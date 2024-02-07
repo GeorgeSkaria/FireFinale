@@ -17,6 +17,7 @@ class _FoodItemPageState extends State<FoodItemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -60,16 +61,19 @@ class _FoodItemPageState extends State<FoodItemPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.resolveWith<Color>(
-                          (Set<MaterialState> states) {
-                            return Color.fromARGB(255, 242, 205, 209);
-                          },
-                        ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                        (Set<MaterialState> states) {
+                          return Color.fromARGB(255, 242, 205, 209);
+                        },
                       ),
-                      onPressed: () {},
-                      child: Text("View all")),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "View all",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
                   ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
@@ -80,7 +84,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text("Shop")),
+                      child: Text(
+                        "Shop",
+                        style: TextStyle(color: Colors.black),
+                      )),
                   ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
@@ -91,7 +98,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text("Food")),
+                      child: Text(
+                        "Food",
+                        style: TextStyle(color: Colors.black),
+                      )),
                 ],
               ),
             ),
@@ -110,7 +120,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text("Menu")),
+                      child: Text(
+                        "Menu",
+                        style: TextStyle(color: Colors.black),
+                      )),
                   ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
@@ -121,7 +134,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text("Alcohol")),
+                      child: Text(
+                        "Alcohol",
+                        style: TextStyle(color: Colors.black),
+                      )),
                   ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
@@ -132,7 +148,10 @@ class _FoodItemPageState extends State<FoodItemPage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text("Craft")),
+                      child: Text(
+                        "Craft",
+                        style: TextStyle(color: Colors.black),
+                      )),
                 ],
               ),
             ),
