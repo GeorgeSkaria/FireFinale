@@ -1,5 +1,6 @@
 import 'package:farefinale/home.dart';
 import 'package:farefinale/main.dart';
+import 'package:farefinale/onboard.dart';
 import 'package:farefinale/utils/dimension.dart';
 import 'package:farefinale/widgets/textfield.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class _SignupState extends State<Signup> {
 
   void signUpUser() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MyApp()));
+        context, MaterialPageRoute(builder: (context) => Onboard()));
   }
 
   void navigateToLogin() {
@@ -88,7 +89,7 @@ class _SignupState extends State<Signup> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(4)),
                         ),
-                        color: Color.fromARGB(246, 170, 11, 11)),
+                        color: Color.fromARGB(246, 201, 21, 41)),
                     child: _isLoading
                         ? const Center(
                             child: CircularProgressIndicator(

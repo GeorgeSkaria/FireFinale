@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:farefinale/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'main.dart';
@@ -20,20 +21,44 @@ class _SplashScreenState extends State<SplashScreen> {
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 3000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Login()));
+        context, MaterialPageRoute(builder: (context) => Signup()));
   }
 
-  Widget build(BuildContext context) {
+  @override
+  build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Center(
-          child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
               height: MediaQuery.of(context).size.height / 3,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/images/templogo.jpeg"),
                 ),
-              ))),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Fare Finale",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w900,
+                fontSize: 24, // Adjust font size if necessary
+              ),
+            ),
+            SizedBox(height: 11.5),
+            Text(
+              'Find Expiring Food Near You',
+              style: TextStyle(
+                fontSize: 16, // Adjust font size if necessary
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
