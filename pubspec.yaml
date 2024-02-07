@@ -78,6 +78,18 @@ flutter:
     - assets/images/time.png
     - assets/images/magnifying-glass.png
     - assets/images/shopping-bag.png
+    - assets/images/pizzahut.jpg
+    - assets/images/akstore.jpg
+    - assets/images/tea.jpg
+    - assets/images/sri.jpg
+    - assets/images/malabar.jpg
+    - assets/images/anstore.webp
+    - assets/images/livaa.jpg
+    - assets/images/tacobell.jpg
+    - assets/images/beverage.webp
+    - assets/images/medico.jpg
+    - assets/images/thumb.jpg
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

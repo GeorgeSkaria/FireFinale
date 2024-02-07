@@ -1,3 +1,5 @@
+import 'package:farefinale/home.dart';
+import 'package:farefinale/shop.dart';
 import 'package:flutter/material.dart';
 
 class SearchResults extends StatelessWidget {
@@ -12,7 +14,16 @@ class SearchResults extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('FreshFinder'),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              size: 20,
+              color: Colors.black,
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -124,6 +135,38 @@ class SearchResults extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: const Color.fromARGB(
+              255, 252, 252, 252), // Background color of the BottomAppBar
+          shape: CircularNotchedRectangle(), // Notch in the bottom app bar
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyApp()));
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FoodItemPage()));
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.person),
+                onPressed: () {},
+              ),
+            ],
           ),
         ),
       ),

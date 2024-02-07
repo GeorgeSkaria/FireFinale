@@ -1,3 +1,4 @@
+import 'package:farefinale/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -14,33 +15,40 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Fare Finale',
-          style: TextStyle(color: Colors.black),
-        ),
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            size: 20,
-            color: Colors.black,
-          ),
-        ),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate to the search results page
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SearchResults()),
-            );
-          },
-          child: const Text('Search'),
+      appBar: AppBar(),
+      body: Placeholder(),
+      bottomNavigationBar: BottomAppBar(
+        color: const Color.fromARGB(
+            255, 252, 252, 252), // Background color of the BottomAppBar
+        shape: CircularNotchedRectangle(), // Notch in the bottom app bar
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchResults()));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FoodItemPage()));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                setState(() {});
+              },
+            ),
+          ],
         ),
       ),
     );
