@@ -15,34 +15,38 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My App'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the search results page
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchResults()),
-                );
-              },
-              child: const Text('Searchinhg'),
+      appBar: AppBar(),
+      body: Placeholder(),
+      bottomNavigationBar: BottomAppBar(
+        color: const Color.fromARGB(
+            255, 252, 252, 252), // Background color of the BottomAppBar
+        shape: CircularNotchedRectangle(), // Notch in the bottom app bar
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {},
             ),
-            SizedBox(
-              height: 40,
-            ),
-            ElevatedButton(
+            IconButton(
+              icon: Icon(Icons.search),
               onPressed: () {
-                // Navigate to the search results page
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FoodItemPage()),
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchResults()));
               },
-              child: const Text('Shop'),
+            ),
+            IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FoodItemPage()));
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                setState(() {});
+              },
             ),
           ],
         ),

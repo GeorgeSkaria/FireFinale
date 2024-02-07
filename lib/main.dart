@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
               height: 64,
             ),
             Textfieldinput(
-              hintText: "Enter your mail",
+              hintText: "Enter your email",
               textInputType: TextInputType.emailAddress,
               textEditingController: _emailController,
             ),
@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(4)),
                     ),
-                    color: Color.fromARGB(246, 170, 11, 11)),
+                    color: Color.fromARGB(246, 201, 21, 41)),
                 child: _isLoading
                     ? const Center(
                         child: CircularProgressIndicator(
