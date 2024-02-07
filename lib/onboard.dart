@@ -13,7 +13,7 @@ class _OnboardState extends State<Onboard> {
   Set<int> selectedIndices = {};
 
   @override
-  build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -34,7 +34,7 @@ class _OnboardState extends State<Onboard> {
             ),
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                "What kind of food are you interested in?",
+                "What are you looking for?",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -42,6 +42,20 @@ class _OnboardState extends State<Onboard> {
                 ),
               ),
               centerTitle: true,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Center(
+                child: Text(
+                  'Select one or more preferences',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ),
             ),
           ),
           SliverPadding(
@@ -81,7 +95,7 @@ class _OnboardState extends State<Onboard> {
                   ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                        EdgeInsets.all(16.0), // Adjust the padding as needed
+                        EdgeInsets.all(16.0),
                       ),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
@@ -90,7 +104,7 @@ class _OnboardState extends State<Onboard> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MyApp()),
                       );
@@ -113,7 +127,7 @@ class _OnboardState extends State<Onboard> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MyApp()),
                       );

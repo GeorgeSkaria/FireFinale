@@ -3,7 +3,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:farefinale/widgets/searchresults.dart';
 
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key});
 
@@ -16,7 +15,21 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My App'),
+        title: const Text(
+          'Fare Finale',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            size: 20,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: Center(
         child: ElevatedButton(
