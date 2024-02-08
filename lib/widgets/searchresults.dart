@@ -1,4 +1,5 @@
 import 'package:farefinale/home.dart';
+import 'package:farefinale/profile.dart';
 import 'package:farefinale/shop.dart';
 import 'package:flutter/material.dart';
 
@@ -165,7 +166,10 @@ class SearchResults extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(Icons.person),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                },
               ),
             ],
           ),
