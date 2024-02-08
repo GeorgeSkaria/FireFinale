@@ -2,7 +2,7 @@
 
 # FareFinale
 
-![FareFinale Logo](link_to_logo.png)
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
