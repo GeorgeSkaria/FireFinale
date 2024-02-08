@@ -1,6 +1,4 @@
-Certainly! Here's a README template for your FareFinale app on GitHub:
 
----
 
 # FareFinale
 
