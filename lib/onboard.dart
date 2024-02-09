@@ -62,9 +62,10 @@ class _OnboardState extends State<Onboard> {
             padding: const EdgeInsets.symmetric(horizontal: 25),
             sliver: SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount:
-                      MediaQuery.of(context).size.width > 600 ? 2 : 2,
-                  git),
+                crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 2,
+                childAspectRatio:
+                    MediaQuery.of(context).size.width > 600 ? 1.5 : 0.9,
+              ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) => GestureDetector(
                   onTap: () {
