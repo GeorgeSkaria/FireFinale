@@ -189,7 +189,7 @@ class _MyAppState extends State<MyApp> {
                           'assets/images/download (3).jpg',
                           fit: BoxFit.cover,
                         ),
-                        
+                      
                       ),
                     ),
                     const SizedBox(
