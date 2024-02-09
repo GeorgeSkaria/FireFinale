@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class ShopDetail {
   final String image, title, location;

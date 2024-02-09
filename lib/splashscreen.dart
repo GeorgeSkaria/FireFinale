@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:farefinale/signup.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
