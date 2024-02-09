@@ -184,6 +184,7 @@ class _MyAppState extends State<MyApp> {
                           'assets/images/download (6).jpg',
                           fit: BoxFit.cover,
                         ),
+                        
                       ),
                     ),
                     const SizedBox(
@@ -256,6 +257,117 @@ class _MyAppState extends State<MyApp> {
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Trending Products",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18),
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (3).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (4).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (5).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (6).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (2).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (7).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 18,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
+              child: Text(
+                "Expiring Soon",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
