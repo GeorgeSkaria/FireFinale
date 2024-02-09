@@ -1,11 +1,8 @@
-import 'package:farefinale/home.dart';
 import 'package:farefinale/main.dart';
 import 'package:farefinale/onboard.dart';
 import 'package:farefinale/utils/dimension.dart';
 import 'package:farefinale/widgets/textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
