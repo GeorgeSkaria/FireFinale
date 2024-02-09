@@ -162,11 +162,7 @@ class _FoodItemPageState extends State<FoodItemPage> {
               child: GridView.builder(
                   itemCount: ShopDetails.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-<<<<<<< HEAD
                       crossAxisCount: 3, childAspectRatio: 0.65),
-=======
-                      crossAxisCount: 3, childAspectRatio: 0.67),
->>>>>>> 42b012c1ce4cb1187f02bcad19ecdbbc16a7a0aa
                   itemBuilder: ((context, index) =>
                       ShopDesign(design: ShopDetails[index]))),
             )),
