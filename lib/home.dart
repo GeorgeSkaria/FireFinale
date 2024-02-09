@@ -15,24 +15,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
   final List<String> _imageList = [
-   'assets/images/download.jpeg',
-    'assets/images/templogo.jpeg',
+    'assets/images/download.jpeg',
     'assets/images/grains.png',
     'assets/images/beverages.png',
     'assets/images/vegetables.png',
     'assets/images/bakery.png',
     'assets/images/freshfruits.png',
-    'assets/images/grocery.png',
     'assets/images/oils.png',
     'assets/images/protein.png',
-    'assets/images/crisps.png',
-    'assets/images/distance.png',
-    'assets/images/favourite.png',
-    'assets/images/question.png',
-    'assets/images/sort.png',
-    'assets/images/time.png',
-    'assets/images/magnifying-glass.png',
-    'assets/images/shopping-bag.png',
     'assets/images/pizzahut.jpg',
     'assets/images/akstore.jpg',
     'assets/images/tea.jpg',
@@ -50,7 +40,6 @@ class _MyAppState extends State<MyApp> {
     'assets/images/download (5).jpg',
     'assets/images/download (6).jpg',
     'assets/images/download (7).jpg',
-
   ];
   late Timer _timer;
 
@@ -63,14 +52,13 @@ class _MyAppState extends State<MyApp> {
       });
     });
   }
-     
-   @override
+
+  @override
   void dispose() {
     _timer.cancel();
     super.dispose();
   }
 
-   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,11 +104,8 @@ class _MyAppState extends State<MyApp> {
               child: Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6),
-                  child: Image.asset(
-                    _imageList[_currentIndex],
-                    width: 1200,
-                    fit: BoxFit.cover
-                  ),
+                  child: Image.asset(_imageList[_currentIndex],
+                      width: 1200, fit: BoxFit.cover),
                 ),
               ),
             ),
@@ -184,29 +169,42 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/download (3).jpg',
+                          'assets/images/download (2).jpg',
                           fit: BoxFit.cover,
                         ),
-                        
                       ),
                     ),
                     const SizedBox(
                       width: 18,
-                      ),
+                    ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/download (4).jpg',
+                          'assets/images/download (6).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (7).jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
@@ -218,59 +216,41 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                     const SizedBox(
-                      width: 18,
-                      ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: Image.asset(
-                          'assets/images/download (6).jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      
-                      ),
-                    ),
-                     const SizedBox(
-                      width: 18,
-                      ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: Image.asset(
-                          'assets/images/download (2).jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                     const SizedBox(
-                      width: 18,
-                      ),
-                      
-                       ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: Image.asset(
-                          'assets/images/download (7).jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-
                     const SizedBox(
                       width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (3).jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (4).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
                   ],
                 ),
               ),
             ),
-             
             SizedBox(
               height: 18,
             ),
@@ -284,7 +264,6 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-
             const SizedBox(
               height: 25,
             ),
@@ -307,7 +286,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                     const SizedBox(
                       width: 18,
-                      ),
+                    ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
@@ -319,9 +298,9 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       width: 18,
-                      ),
+                    ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
@@ -333,9 +312,9 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       width: 18,
-                      ),
+                    ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
@@ -347,9 +326,9 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       width: 18,
-                      ),
+                    ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
@@ -361,10 +340,10 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       width: 18,
-                      ),
-                           ClipRRect(
+                    ),
+                    ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: SizedBox(
                         width: 150.0,
@@ -377,13 +356,12 @@ class _MyAppState extends State<MyApp> {
                     ),
                     const SizedBox(
                       width: 18,
-                      ),
+                    ),
                   ],
                 ),
               ),
             ),
           ],
-
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -413,7 +391,8 @@ class _MyAppState extends State<MyApp> {
             ),
             IconButton(
               icon: Icon(Icons.person),
-              onPressed: () {Navigator.push(context,
+              onPressed: () {
+                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ProfilePage()));
                 setState(() {});
               },
