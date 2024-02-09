@@ -1,11 +1,11 @@
 import 'dart:async';
-
 import 'package:farefinale/shop.dart';
 import 'package:farefinale/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:farefinale/widgets/searchresults.dart';
 
 class MyApp extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
   const MyApp({Key? key});
 
   @override
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 3), (_timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
       setState(() {
         _currentIndex = (_currentIndex + 1) % _imageList.length;
       });
@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             size: 20,
             color: Colors.black,
@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.favorite,
               size: 30,
               color: Color.fromARGB(246, 201, 21, 41),
@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Recommended Items",
@@ -101,12 +101,10 @@ class _MyAppState extends State<MyApp> {
             ),
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: Image.asset(_imageList[_currentIndex],
-                      width: 1200, fit: BoxFit.cover),
-                ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: Image.asset(_imageList[_currentIndex],
+                    width: 1200, fit: BoxFit.cover),
               ),
             ),
             const SizedBox(height: 6),
@@ -122,7 +120,7 @@ class _MyAppState extends State<MyApp> {
                     backgroundColor:
                         const Color.fromARGB(255, 232, 178, 178), // Text color
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -141,10 +139,10 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 18,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Mostly Viewed Products",
@@ -251,10 +249,10 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 18,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Trending Products",
@@ -367,33 +365,33 @@ class _MyAppState extends State<MyApp> {
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromARGB(
             255, 252, 252, 252), // Background color of the BottomAppBar
-        shape: CircularNotchedRectangle(), // Notch in the bottom app bar
+        shape: const CircularNotchedRectangle(), // Notch in the bottom app bar
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SearchResults()));
+                    MaterialPageRoute(builder: (context) => const SearchResults()));
               },
             ),
             IconButton(
-              icon: Icon(Icons.shopping_cart),
+              icon: const Icon(Icons.shopping_cart),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FoodItemPage()));
+                    MaterialPageRoute(builder: (context) => const FoodItemPage()));
               },
             ),
             IconButton(
-              icon: Icon(Icons.person),
+              icon: const Icon(Icons.person),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
+                    MaterialPageRoute(builder: (context) => const ProfilePage()));
                 setState(() {});
               },
             ),
