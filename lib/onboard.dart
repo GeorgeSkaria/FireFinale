@@ -64,7 +64,11 @@ class _OnboardState extends State<Onboard> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 2,
                 childAspectRatio:
+<<<<<<< HEAD
                     MediaQuery.of(context).size.width > 600 ? 1.5 : 1,
+=======
+                    MediaQuery.of(context).size.width > 600 ? 1.5 : 0.9,
+>>>>>>> 42b012c1ce4cb1187f02bcad19ecdbbc16a7a0aa
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) => GestureDetector(
@@ -110,11 +114,11 @@ class _OnboardState extends State<Onboard> {
                       );
                     },
                     child: Text(
-                      "         Skip        ",
+                      "       Skip     ",
                       style: TextStyle(color: Colors.black),
                     ),
                   ),
-                  SizedBox(width: 150),
+                  SizedBox(width: 120),
                   ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
@@ -133,7 +137,7 @@ class _OnboardState extends State<Onboard> {
                       );
                     },
                     child: Text(
-                      "     Proceed    ",
+                      "      Proceed      ",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

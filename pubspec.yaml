@@ -89,12 +89,16 @@ flutter:
     - assets/images/beverage.webp
     - assets/images/medico.jpg
     - assets/images/thumb.jpg
+<<<<<<< HEAD
     - assets/images/download (2).jpg
     - assets/images/download (3).jpg
     - assets/images/download (4).jpg
     - assets/images/download (5).jpg
     - assets/images/download (6).jpg
     - assets/images/download (7).jpg
+=======
+    - assets/images/profilepic.png
+>>>>>>> 42b012c1ce4cb1187f02bcad19ecdbbc16a7a0aa
 
 
 

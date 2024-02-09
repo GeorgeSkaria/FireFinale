@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:farefinale/shop.dart';
+import 'package:farefinale/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -414,7 +415,8 @@ class _MyAppState extends State<MyApp> {
             ),
             IconButton(
               icon: Icon(Icons.person),
-              onPressed: () {
+              onPressed: () {Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
                 setState(() {});
               },
             ),

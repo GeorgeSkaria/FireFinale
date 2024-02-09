@@ -1,4 +1,5 @@
 import 'package:farefinale/home.dart';
+import 'package:farefinale/profile.dart';
 import 'package:farefinale/shopdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -161,7 +162,11 @@ class _FoodItemPageState extends State<FoodItemPage> {
               child: GridView.builder(
                   itemCount: ShopDetails.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+<<<<<<< HEAD
                       crossAxisCount: 3, childAspectRatio: 0.65),
+=======
+                      crossAxisCount: 3, childAspectRatio: 0.67),
+>>>>>>> 42b012c1ce4cb1187f02bcad19ecdbbc16a7a0aa
                   itemBuilder: ((context, index) =>
                       ShopDesign(design: ShopDetails[index]))),
             )),
@@ -194,7 +199,9 @@ class _FoodItemPageState extends State<FoodItemPage> {
                   ),
                   IconButton(
                     icon: Icon(Icons.person),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
+                },
                   ),
                 ],
               ),
