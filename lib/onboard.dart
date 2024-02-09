@@ -65,6 +65,7 @@ class _OnboardState extends State<Onboard> {
                 crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 2,
                 childAspectRatio:
                     MediaQuery.of(context).size.width > 600 ? 1.5 : 0.9,
+                // MediaQuery.of(context).size.width > 600 ? 1.5 : 0.9,
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) => GestureDetector(

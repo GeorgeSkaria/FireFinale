@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:farefinale/shop.dart';
 import 'package:farefinale/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:farefinale/widgets/searchresults.dart';
 
 class MyApp extends StatefulWidget {
@@ -16,7 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
-  List<String> _imageList = [
+  final List<String> _imageList = [
    'assets/images/download.jpeg',
     'assets/images/templogo.jpeg',
     'assets/images/grains.png',
