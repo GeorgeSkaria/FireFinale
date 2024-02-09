@@ -64,7 +64,7 @@ class _OnboardState extends State<Onboard> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 2,
                 childAspectRatio:
-                    MediaQuery.of(context).size.width > 600 ? 1.5 : 1.25,
+                    MediaQuery.of(context).size.width > 600 ? 1.5 : 1,
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) => GestureDetector(
