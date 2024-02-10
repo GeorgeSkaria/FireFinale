@@ -102,7 +102,7 @@ class SearchResults extends StatelessWidget {
                           child: Image.asset('assets/images/freshfruits.png'),
                         ),
                         Expanded(
-                          child: Image.asset('assets/images/freshfruits.png'),
+                          child: Image.asset('assets/images/13.jpeg'),
                         ),
                       ],
                     ),

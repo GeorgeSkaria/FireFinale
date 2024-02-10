@@ -102,7 +102,7 @@ class SearchResults extends StatelessWidget {
                           child: Image.asset('assets/images/freshfruits.png'),
                         ),
                         Expanded(
-                          child: Image.asset('assets/images/freshfruits.png'),
+                          child: Image.asset('assets/images/5.jpeg'),
                         ),
                       ],
                     ),
@@ -166,8 +166,9 @@ class SearchResults extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(Icons.person),
-                onPressed: () {Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
               ),
             ],

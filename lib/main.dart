@@ -44,91 +44,88 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        child: SingleChildScrollView(
+          // Wrap with SingleChildScrollView
           child: Container(
-        padding: MediaQuery.of(context).size.width > webScreenSize
-            ? EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width / 3)
-            : const EdgeInsets.symmetric(horizontal: 32),
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Flexible(flex: 2, child: Container()),
-            Image.asset(
-              "assets/images/templogo.jpeg",
-              height: 250,
-            ),
-            const SizedBox(
-              height: 64,
-            ),
-            Textfieldinput(
-              hintText: "Enter your email",
-              textInputType: TextInputType.emailAddress,
-              textEditingController: _emailController,
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            Textfieldinput(
-                hintText: "Enter your password",
-                textInputType: TextInputType.text,
-                textEditingController: _passController,
-                isPass: true),
-            const SizedBox(
-              height: 24,
-            ),
-            InkWell(
-              onTap: loginUser,
-              child: Container(
-                width: double.infinity,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                decoration: const ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                    ),
-                    color: Color.fromARGB(246, 201, 21, 41)),
-                child: _isLoading
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.white,
-                        ),
-                      )
-                    : const Text(
-                        "Login",
-                        style: TextStyle(color: Colors.white),
-                      ),
-              ),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            Flexible(
-              flex: 2,
-              child: Container(),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            padding: MediaQuery.of(context).size.width > webScreenSize
+                ? EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width / 3)
+                : const EdgeInsets.symmetric(horizontal: 32),
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: const Text("Don't have an account?"),
+                const SizedBox(height: 16), // Adjusted spacing
+                Image.asset(
+                  "assets/images/templogo.jpeg",
+                  height: 250,
                 ),
-                GestureDetector(
-                  onTap: navigateTosignup,
+                const SizedBox(
+                  height: 64,
+                ),
+                Textfieldinput(
+                  hintText: "Enter your email",
+                  textInputType: TextInputType.emailAddress,
+                  textEditingController: _emailController,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Textfieldinput(
+                  hintText: "Enter your password",
+                  textInputType: TextInputType.text,
+                  textEditingController: _passController,
+                  isPass: true,
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                InkWell(
+                  onTap: loginUser,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    child: const Text(
-                      "Sign In",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    decoration: const ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                      ),
+                      color: Color.fromARGB(246, 201, 21, 41),
                     ),
+                    child: _isLoading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text(
+                            'Log In',
+                            style: TextStyle(color: Colors.white),
+                          ),
                   ),
                 ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("If you don't have an account?"),
+                    GestureDetector(
+                      onTap: navigateTosignup,
+                      child: const Text(
+                        "Sign In",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 16), // Adjusted spacing
               ],
-            )
-          ],
+            ),
+          ),
         ),
-      )),
+      ),
     );
   }
 }
