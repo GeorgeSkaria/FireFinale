@@ -54,7 +54,8 @@ class SearchResults extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
-                        backgroundColor: Colors.white, // Text color
+                        backgroundColor:
+                            Color.fromARGB(255, 242, 205, 209), // Text color
                       ),
                       child: const Text('All'),
                     ),
@@ -62,7 +63,8 @@ class SearchResults extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
-                        backgroundColor: Colors.white, // Text color
+                        backgroundColor:
+                            Color.fromARGB(255, 242, 205, 209), // Text color
                       ),
                       child: const Text('Produce'),
                     ),
@@ -70,7 +72,8 @@ class SearchResults extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
-                        backgroundColor: Colors.white, // Text color
+                        backgroundColor:
+                            Color.fromARGB(255, 242, 205, 209), // Text color
                       ),
                       child: const Text('Dairy'),
                     ),
@@ -78,7 +81,8 @@ class SearchResults extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
-                        backgroundColor: Colors.white, // Text color
+                        backgroundColor:
+                            Color.fromARGB(255, 242, 205, 209), // Text color
                       ),
                       child: const Text('Bakery'),
                     ),
@@ -233,9 +237,19 @@ class SearchResults extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    // Handle offer button tap
-                  },
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (Set<MaterialState> states) {
+                        return Colors.black;
+                      },
+                    ),
+                    backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (Set<MaterialState> states) {
+                        return Color.fromARGB(255, 242, 205, 209);
+                      },
+                    ),
+                  ),
+                  onPressed: () {},
                   child: Text('Apply Offer'),
                 ),
               ],
