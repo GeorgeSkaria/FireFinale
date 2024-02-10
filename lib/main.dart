@@ -6,7 +6,7 @@ import 'utils/dimension.dart';
 import 'widgets/textfield.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: SplashScreen(),
   ));
@@ -22,7 +22,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
-  bool _isLoading = false;
+  final bool _isLoading = false;
   @override
   void dispose() {
     super.dispose();
