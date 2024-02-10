@@ -1,3 +1,6 @@
+import 'package:farefinale/home.dart';
+import 'package:farefinale/profile.dart';
+import 'package:farefinale/shop.dart';
 import 'package:flutter/material.dart';
 
 class SearchResults extends StatelessWidget {
@@ -163,25 +166,26 @@ class SearchResults extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.home),
                 onPressed: () {
-                  // Handle home button tap
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyApp()));
                 },
               ),
               IconButton(
                 icon: Icon(Icons.search),
-                onPressed: () {
-                  // Handle search button tap
-                },
+                onPressed: () {},
               ),
               IconButton(
                 icon: Icon(Icons.shopping_cart),
                 onPressed: () {
-                  // Handle shopping cart button tap
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FoodItemPage()));
                 },
               ),
               IconButton(
                 icon: Icon(Icons.person),
                 onPressed: () {
-                  // Handle profile button tap
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
               ),
             ],

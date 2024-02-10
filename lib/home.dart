@@ -120,7 +120,7 @@ class _MyAppState extends State<MyApp> {
                     backgroundColor:
                         const Color.fromARGB(255, 232, 178, 178), // Text color
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -486,22 +486,28 @@ class _MyAppState extends State<MyApp> {
             IconButton(
               icon: const Icon(Icons.search),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SearchResults()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SearchResults()));
               },
             ),
             IconButton(
               icon: const Icon(Icons.shopping_cart),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const FoodItemPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FoodItemPage()));
               },
             ),
             IconButton(
               icon: const Icon(Icons.person),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ProfilePage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()));
                 setState(() {});
               },
             ),
