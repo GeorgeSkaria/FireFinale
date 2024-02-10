@@ -99,7 +99,7 @@ class _LoginState extends State<Login> {
                             ),
                           )
                         : const Text(
-                            'Sign In',
+                            'Log In',
                             style: TextStyle(color: Colors.white),
                           ),
                   ),
