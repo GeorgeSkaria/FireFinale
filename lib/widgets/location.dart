@@ -1,6 +1,6 @@
 import 'package:farefinale/home.dart';
 import 'package:farefinale/profile.dart';
-import 'package:farefinale/searchresults.dart';
+import 'package:farefinale/widgets/searchresults.dart';
 import 'package:farefinale/shop.dart';
 import 'package:flutter/material.dart';
 
