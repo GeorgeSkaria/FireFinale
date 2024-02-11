@@ -109,49 +109,49 @@ class SearchResults extends StatelessWidget {
                     buildListItem(
                       image: 'assets/images/bakery.png',
                       category: 'Bakery',
-                      isExpired: false,
+                      isExpired: 'In One days',
                       startingPrice: '\$5.99',
                     ),
                     buildListItem(
                       image: 'assets/images/beverages.png',
                       category: 'Beverages',
-                      isExpired: true,
+                      isExpired: 'In Two days',
                       startingPrice: '\$2.49',
                     ),
                     buildListItem(
                       image: 'assets/images/freshfruits.png',
                       category: 'Fresh Fruits',
-                      isExpired: false,
+                      isExpired: "In Two days",
                       startingPrice: '\$3.99',
                     ),
                     buildListItem(
                       image: 'assets/images/13.jpeg',
                       category: 'Chips',
-                      isExpired: false,
+                      isExpired: 'In Three days',
                       startingPrice: '\$1.99',
                     ),
                     buildListItem(
                       image: 'assets/images/grains.png',
                       category: 'Grains',
-                      isExpired: true,
+                      isExpired: 'In Four days',
                       startingPrice: '\$4.49',
                     ),
                     buildListItem(
                       image: 'assets/images/grocery.png',
                       category: 'Grocery',
-                      isExpired: false,
+                      isExpired: 'In 6 days',
                       startingPrice: '\$2.99',
                     ),
                     buildListItem(
                       image: 'assets/images/oils.png',
                       category: 'Oils',
-                      isExpired: false,
+                      isExpired: 'In 6 days',
                       startingPrice: '\$6.99',
                     ),
                     buildListItem(
                       image: 'assets/images/protein.png',
                       category: 'Protein',
-                      isExpired: true,
+                      isExpired: 'In 7 days',
                       startingPrice: '\$7.99',
                     ),
                   ],
@@ -202,7 +202,7 @@ class SearchResults extends StatelessWidget {
   Widget buildListItem({
     required String image,
     required String category,
-    required bool isExpired,
+    required String isExpired,
     required String startingPrice,
   }) {
     return Container(
@@ -215,7 +215,7 @@ class SearchResults extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            height: 120,
+            height: 100,
             width: double.infinity,
             fit: BoxFit.cover,
           ),
@@ -233,24 +233,8 @@ class SearchResults extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'Expired: ${isExpired ? 'Yes' : 'No'}',
+                  'Expiry: $isExpired',
                   style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                      (Set<MaterialState> states) {
-                        return Colors.black;
-                      },
-                    ),
-                    backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                      (Set<MaterialState> states) {
-                        return Color.fromARGB(255, 242, 205, 209);
-                      },
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text('Apply Offer'),
                 ),
               ],
             ),
