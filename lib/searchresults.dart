@@ -260,7 +260,3 @@ class SearchResults extends StatelessWidget {
     );
   }
 }
-
-void main() {
-  runApp(const SearchResults());
-}
