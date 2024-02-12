@@ -51,7 +51,9 @@ FareFinale is developed using Flutter, ensuring a cross-platform user experience
    ```
    flutter run
    ```
-
+```
+*) Don't use mobile emulators to run the App. Use web (chrome/edge) to run the App successfully.
+   ```
 ## Usage
 1. Upon launching the app, users can explore nearby shops and available discounted food items.
 2. Users can use sorting, filtering, and search functionality to narrow down their search criteria.
