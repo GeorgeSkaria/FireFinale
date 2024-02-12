@@ -1,9 +1,6 @@
+import 'package:farefinale/main.dart';
 import 'package:flutter/material.dart';
-import 'package:farefinale/home.dart';
-import 'package:farefinale/widgets/searchresults.dart';
-import 'package:farefinale/shop.dart';
-
-import 'main.dart';
+import 'package:farefinale/resources/auth_methods.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -111,28 +108,32 @@ class ProfilePage extends StatelessWidget {
                 buildOptionItem(
                   icon: Icons.payment,
                   title: 'Payment',
+                  onTap: () {},
                 ),
                 buildOptionItem(
                   icon: Icons.shopping_basket,
                   title: 'Delivered Items',
+                  onTap: () {},
                 ),
                 buildOptionItem(
                   icon: Icons.settings,
                   title: 'Settings',
+                  onTap: () {},
                 ),
                 buildOptionItem(
                   icon: Icons.local_offer,
                   title: 'Promo Code',
+                  onTap: () {},
                 ),
                 buildOptionItem(
                   icon: Icons.logout,
                   title: 'Logout',
-                  onTap: () {
-                    Navigator.pop(context);
-
-                    Navigator.push(
+                  onTap: () async {
+                    await AuthMethods().signOut();
+                    Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                      MaterialPageRoute(builder: (context) => const Login()),
+                      (route) => false,
                     );
                   },
                 ),
@@ -154,65 +155,21 @@ class ProfilePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: const Color.fromARGB(255, 252, 252, 252),
-        shape: CircularNotchedRectangle(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.home),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
-                );
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchResults()),
-                );
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FoodItemPage()),
-                );
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.person),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),
     );
   }
 
-  Widget buildOptionItem(
-      {required IconData icon, required String title, Function()? onTap}) {
+  Widget buildOptionItem({
+    required IconData icon,
+    required String title,
+    required Function()? onTap,
+  }) {
     return ListTile(
       leading: Icon(icon, color: Colors.black),
       title: Text(
         title,
         style: TextStyle(color: Colors.black, fontFamily: 'SpecialFont'),
       ),
-      onTap: onTap,
+      onTap: onTap as void Function()?,
     );
   }
-}
-
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: ProfilePage(),
-  ));
 }

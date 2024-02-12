@@ -26,13 +26,13 @@ class _OnboardState extends State<Onboard> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back,
                 size: 20,
                 color: Colors.black,
               ),
             ),
-            flexibleSpace: const FlexibleSpaceBar(
+            flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 "What are you looking for?",
                 style: TextStyle(
@@ -44,9 +44,9 @@ class _OnboardState extends State<Onboard> {
               centerTitle: true,
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Center(
                 child: Text(
                   'Select one or more preferences',
@@ -95,7 +95,7 @@ class _OnboardState extends State<Onboard> {
                   ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                        const EdgeInsets.all(16.0),
+                        EdgeInsets.all(16.0),
                       ),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
@@ -106,38 +106,38 @@ class _OnboardState extends State<Onboard> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MyApp()),
+                        MaterialPageRoute(builder: (context) => MyApp()),
                       );
                     },
-                    child: const Text(
+                    child: Text(
                       "       Skip     ",
                       style: TextStyle(color: Colors.black),
                     ),
                   ),
-                  const SizedBox(width: 120),
+                  SizedBox(width: 120),
                   ElevatedButton(
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                        const EdgeInsets.all(16.0),
+                        EdgeInsets.all(16.0),
                       ),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
-                          return const Color.fromARGB(246, 201, 21, 41);
+                          return Color.fromARGB(246, 201, 21, 41);
                         },
                       ),
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MyApp()),
+                        MaterialPageRoute(builder: (context) => MyApp()),
                       );
                     },
-                    child: const Text(
+                    child: Text(
                       "      Proceed      ",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
                 ],
@@ -167,12 +167,12 @@ class OnboardCard extends StatelessWidget {
       children: <Widget>[
         Center(
           child: Container(
-            padding: const EdgeInsets.all(3),
+            padding: EdgeInsets.all(3),
             height: MediaQuery.of(context).size.width > 600 ? 200 : 150,
             width: MediaQuery.of(context).size.width > 600 ? 200 : 160,
             decoration: BoxDecoration(
-              color: isSelected ? const Color.fromARGB(255, 242, 205, 209) : null,
-              boxShadow: const [
+              color: isSelected ? Color.fromARGB(255, 242, 205, 209) : null,
+              boxShadow: [
                 BoxShadow(
                   color: Colors.white,
                   blurRadius: 5,
@@ -182,8 +182,8 @@ class OnboardCard extends StatelessWidget {
               ],
               border: Border.all(
                 color: isSelected
-                    ? const Color.fromARGB(255, 242, 205, 209)
-                    : const Color.fromARGB(255, 247, 247, 248),
+                    ? Color.fromARGB(255, 242, 205, 209)
+                    : Color.fromARGB(255, 247, 247, 248),
                 width: 3,
               ),
               borderRadius: BorderRadius.circular(10),
@@ -202,7 +202,7 @@ class OnboardCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 4),
             child: Text(
               detail.title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w900,
               ),
             ),

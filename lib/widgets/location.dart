@@ -24,10 +24,7 @@ class MyMap extends StatelessWidget {
         ),
       ),
       body: Image.asset('assets/images/vector.jpg',
-          fit: BoxFit.cover,
-          // Use BoxFit.fitWidth to fit the image within the width of the screen
-          width: double.infinity,
-          height: double.infinity),
+          fit: BoxFit.cover, width: double.infinity, height: double.infinity),
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromARGB(255, 252, 252, 252),
         shape: CircularNotchedRectangle(),

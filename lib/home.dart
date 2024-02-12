@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:farefinale/widgets/searchresults.dart';
 
 class MyApp extends StatefulWidget {
-  // ignore: use_key_in_widget_constructors
   const MyApp({Key? key});
 
   @override
@@ -46,7 +45,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 3), (_timer) {
       setState(() {
         _currentIndex = (_currentIndex + 1) % _imageList.length;
       });
@@ -68,7 +67,7 @@ class _MyAppState extends State<MyApp> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
             size: 20,
             color: Colors.black,
@@ -77,7 +76,7 @@ class _MyAppState extends State<MyApp> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon: Icon(
               Icons.favorite,
               size: 30,
               color: Color.fromARGB(246, 201, 21, 41),
@@ -89,7 +88,7 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Recommended Items",
@@ -101,10 +100,12 @@ class _MyAppState extends State<MyApp> {
             ),
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: Image.asset(_imageList[_currentIndex],
-                    width: 1200, fit: BoxFit.cover),
+              child: Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: Image.asset(_imageList[_currentIndex],
+                      width: 1200, fit: BoxFit.cover),
+                ),
               ),
             ),
             const SizedBox(height: 6),
@@ -139,10 +140,10 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 18,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Mostly Viewed Products",
@@ -167,7 +168,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/13.jpeg',
+                          'assets/images/download (2).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -181,7 +182,22 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/1.jpeg',
+                          'assets/images/download (6).jpg',
+                          fit: BoxFit.cover,
+                        ),
+                        
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: SizedBox(
+                        width: 150.0,
+                        height: 150.0,
+                        child: Image.asset(
+                          'assets/images/download (7).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -195,7 +211,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/12.jpeg',
+                          'assets/images/download (5).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -209,7 +225,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/2.jpeg',
+                          'assets/images/download (3).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -223,21 +239,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/11.jpeg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 18,
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: Image.asset(
-                          'assets/images/3.jpeg',
+                          'assets/images/download (4).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -249,10 +251,10 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 18,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 16, top: 16, bottom: 8),
               child: Text(
                 "Trending Products",
@@ -359,6 +361,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
+
             SizedBox(
               height: 18,
             ),
@@ -387,7 +390,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/4.jpeg',
+                          'assets/images/download (3).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -401,7 +404,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/6.jpeg',
+                          'assets/images/download (4).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -415,7 +418,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/8.jpeg',
+                          'assets/images/download (5).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -429,7 +432,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/9.jpeg',
+                          'assets/images/download (6).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -443,7 +446,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/7.jpeg',
+                          'assets/images/download (2).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -457,7 +460,7 @@ class _MyAppState extends State<MyApp> {
                         width: 150.0,
                         height: 150.0,
                         child: Image.asset(
-                          'assets/images/5.jpeg',
+                          'assets/images/download (7).jpg',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -475,39 +478,33 @@ class _MyAppState extends State<MyApp> {
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromARGB(
             255, 252, 252, 252), // Background color of the BottomAppBar
-        shape: const CircularNotchedRectangle(), // Notch in the bottom app bar
+        shape: CircularNotchedRectangle(), // Notch in the bottom app bar
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              icon: const Icon(Icons.home),
+              icon: Icon(Icons.home),
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(Icons.search),
+              icon: Icon(Icons.search),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SearchResults()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchResults()));
               },
             ),
             IconButton(
-              icon: const Icon(Icons.shopping_cart),
+              icon: Icon(Icons.shopping_cart),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const FoodItemPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FoodItemPage()));
               },
             ),
             IconButton(
-              icon: const Icon(Icons.person),
+              icon: Icon(Icons.person),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfilePage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
                 setState(() {});
               },
             ),

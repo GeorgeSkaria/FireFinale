@@ -1,6 +1,9 @@
+import 'package:farefinale/home.dart';
 import 'package:farefinale/main.dart';
 import 'package:farefinale/onboard.dart';
+import 'package:farefinale/resources/auth_methods.dart';
 import 'package:farefinale/utils/dimension.dart';
+import 'package:farefinale/utils/utils.dart';
 import 'package:farefinale/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +17,7 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
-  final TextEditingController _bioController = TextEditingController();
-  final TextEditingController _usernameController = TextEditingController();
+
   bool _isLoading = false;
 
   @override
@@ -23,13 +25,25 @@ class _SignupState extends State<Signup> {
     super.dispose();
     _emailController.dispose();
     _passController.dispose();
-    _bioController.dispose();
-    _usernameController.dispose();
   }
 
-  void signUpUser() {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Onboard()));
+  void signUpUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+    String res = await AuthMethods().signUpUser(
+      email: _emailController.text,
+      password: _passController.text,
+    );
+    if (res == "success") {
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const Onboard()));
+    } else {
+      showSnackbar(res, context);
+    }
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   void navigateToLogin() {
@@ -54,11 +68,11 @@ class _SignupState extends State<Signup> {
               children: [
                 const SizedBox(height: 16), // Adjusted spacing
                 Image.asset(
-                  "assets/images/templogo.jpeg",
+                  "assets/images/templogo.png",
                   height: 250,
                 ),
                 const SizedBox(
-                  height: 64,
+                  height: 30,
                 ),
                 Textfieldinput(
                   hintText: "Enter your email",

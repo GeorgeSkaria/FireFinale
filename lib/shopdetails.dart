@@ -1,3 +1,4 @@
+
 class ShopDetail {
   final String image, title, location;
   final int id;

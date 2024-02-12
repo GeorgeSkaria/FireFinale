@@ -125,7 +125,7 @@ class SearchResults extends StatelessWidget {
                       startingPrice: '\$3.99',
                     ),
                     buildListItem(
-                      image: 'assets/images/13.jpeg',
+                      image: 'assets/images/download (2).jpg',
                       category: 'Chips',
                       isExpired: 'In Three days',
                       startingPrice: '\$1.99',

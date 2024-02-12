@@ -1,14 +1,55 @@
 import 'package:farefinale/home.dart';
+import 'package:farefinale/resources/auth_methods.dart';
 import 'package:farefinale/signup.dart';
+import 'package:farefinale/utils/utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'splashscreen.dart';
 import 'utils/dimension.dart';
 import 'widgets/textfield.dart';
 
-void main() {
-  runApp(const MaterialApp(
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: "AIzaSyA-eZb82KnCnGh9-sSqaHcyVSwcB7WDbEc",
+        appId: "1:969641690633:web:b3e11cb657b5d233d1dad8",
+        messagingSenderId: "969641690633",
+        projectId: "farefinale-4ec3b",
+        storageBucket: "farefinale-4ec3b.appspot.com",
+      ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
+
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SplashScreen(),
+    home: StreamBuilder(
+      stream: FirebaseAuth.instance.idTokenChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.active) {
+          if (snapshot.hasData) {
+            return MyApp();
+          } else if (snapshot.hasError) {
+            return Center(
+              child: Text("${snapshot.error}"),
+            );
+          }
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          );
+        }
+        return const SplashScreen();
+      },
+    ),
   ));
 }
 
@@ -22,7 +63,8 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
-  final bool _isLoading = false;
+
+  bool _isLoading = false;
   @override
   void dispose() {
     super.dispose();
@@ -30,9 +72,21 @@ class _LoginState extends State<Login> {
     _passController.dispose();
   }
 
-  void loginUser() {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MyApp()));
+  void loginUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+    String res = await AuthMethods().loginUser(
+        email: _emailController.text, password: _passController.text);
+    if (res == "success") {
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const MyApp()));
+    } else {
+      showSnackbar(res, context);
+    }
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   void navigateTosignup() {
@@ -57,11 +111,11 @@ class _LoginState extends State<Login> {
               children: [
                 const SizedBox(height: 16), // Adjusted spacing
                 Image.asset(
-                  "assets/images/templogo.jpeg",
+                  "assets/images/templogo.png",
                   height: 250,
                 ),
                 const SizedBox(
-                  height: 64,
+                  height: 30,
                 ),
                 Textfieldinput(
                   hintText: "Enter your email",
@@ -99,7 +153,7 @@ class _LoginState extends State<Login> {
                             ),
                           )
                         : const Text(
-                            'Log In',
+                            'Login',
                             style: TextStyle(color: Colors.white),
                           ),
                   ),
